@@ -11,7 +11,7 @@ const nextConfig = {
         locale: false,
         headers: [
           {
-            key: 'Cache-Control',
+            key: 'CDN-Cache-Control',
             value: 'public, max-age=31536000',
           }
         ],
@@ -21,8 +21,7 @@ const nextConfig = {
         source: '/fullyStaticPage',
         headers: [
           {
-            key: 'Cache-Control',
-            // note that this is the only place where Cache-Control setting actually work for pages, all the other page types would be overidden in production
+            key: 'CDN-Cache-Control',
             value: 'public, max-age=60, s-maxage=600, stale-while-revalidate=14400, stale-if-error=14400',
           }
         ],

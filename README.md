@@ -1,3 +1,9 @@
+This is the latest version of the demo used in corresponding article at FocusReactive blog https://focusreactive.com/configure-cdn-caching-for-self-hosted-next-js-websites/.
+
+Check other branches in this repo to see how other Next.js versions behaved.
+
+__
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
