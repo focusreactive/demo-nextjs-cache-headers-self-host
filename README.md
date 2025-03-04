@@ -1,3 +1,9 @@
+This version of the demo is running on the latest Next.js 14.x, with examples of fully functioning `Cache-control` override feature.
+
+Check other branches in this repo to see how other Next.js versions behaved.
+
+__
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
