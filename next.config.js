@@ -22,7 +22,6 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            // note that this is the only place where Cache-Control setting actually work for pages, all the other page types would be overidden in production
             value: 'public, max-age=60, s-maxage=600, stale-while-revalidate=14400, stale-if-error=14400',
           }
         ],
@@ -31,6 +30,11 @@ const nextConfig = {
         // this page would have both html and json representation of page data that both need to be cached with same policy for consistency
         source: '/(.*)(getStaticProps|getStaticProps\.json)',
         headers: [
+          {
+            // Cache-Control override was finally introduced in later versions of Next.js 14.x, whilst early version override config been ignored
+            key: 'Cache-Control',
+            value: 'public, max-age=111',
+          },
           {
             // Example of Cloudflare custom header that takes priority over Cache-Control. Fastly for example hasSurrogate-Control
             key: 'CDN-Cache-Control',
@@ -43,6 +47,11 @@ const nextConfig = {
         source: '/(.*)/getStaticPaths/(.*)(json)',
         headers: [
           {
+            // Cache-Control override was finally introduced in later versions of Next.js 14.x, whilst early version override config been ignored
+            key: 'Cache-Control',
+            value: 'public, max-age=111',
+          },
+          {
             // Example of Cloudflare custom header that takes priority over Cache-Control. Fastly for example hasSurrogate-Control
             key: 'CDN-Cache-Control',
             value: 'max-age=600, stale-while-revalidate=14400, stale-if-error=14400',
@@ -52,6 +61,11 @@ const nextConfig = {
       {
         source: '/getStaticPaths/:name',
         headers: [
+          {
+            // Cache-Control override was finally introduced in later versions of Next.js 14.x, whilst early version override config been ignored
+            key: 'Cache-Control',
+            value: 'public, max-age=111',
+          },
           {
             // Example of Cloudflare custom header that takes priority over Cache-Control. Fastly for example hasSurrogate-Control
             key: 'CDN-Cache-Control',
