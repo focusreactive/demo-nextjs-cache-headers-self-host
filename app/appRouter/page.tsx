@@ -42,12 +42,11 @@ export default function Home() {
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <Link
-          prefetch={false}
           href="/appRouter/getStaticProps"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Example App Router equivalent <code className="font-mono font-bold">getStaticProps</code>
+            Static data (prev <code className="font-mono font-bold">getStaticProps</code>)
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -58,28 +57,11 @@ export default function Home() {
         </Link>
 
         <Link
-          prefetch={false}
-          href="/appRouter/getStaticPaths/turbo"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            <code className="font-mono font-bold">getStaticPaths</code>
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Data fetched in runtime and then cached
-          </p>
-        </Link>
-
-        <Link
-          prefetch={false}
           href="/appRouter/getServerSideProps"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            <code className="font-mono font-bold">getServerSideProps</code>
+            Dynamic Server Data (SSR) <code className="font-mono font-bold">prev getServerSideProps</code>
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -92,13 +74,12 @@ export default function Home() {
         </div>
         <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
 
-        <Link
-          prefetch={false}
+         <Link
           href="/appRouter/fullyStaticPage"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            <code className="font-mono font-bold">fullyStaticPage</code>
+            No data fetching
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -107,10 +88,24 @@ export default function Home() {
             Page with hardcoded content
           </p>
         </Link>
+
+        <Link
+          href="/appRouter/getStaticPropsRevalidate/turbo"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        >
+          <h2 className={`mb-3 text-2xl font-semibold`}>
+            Static with ISR <code className="font-mono font-bold">revalidate</code>
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            Data fetched in runtime and then cached
+          </p>
+        </Link>
       </div>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <Link
-          prefetch={false}
           href="/"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
