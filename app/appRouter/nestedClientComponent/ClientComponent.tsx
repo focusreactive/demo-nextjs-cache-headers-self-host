@@ -1,12 +1,17 @@
+// @ts-nocheck
+
+'use client'
+
 import {Inter} from 'next/font/google'
 import Image from 'next/image'
-import Link from "next/link"
+import Link from "next/link";
+import { useState } from 'react';
 import '@/app/globals.css'
 
 const inter = Inter({subsets: ['latin']})
 
-
-export default function Page() {
+export default function ClientComponent({children}) {
+  const [count, setCount] = useState(0);
 
   return (
     <div className={inter.className}>
@@ -15,7 +20,7 @@ export default function Page() {
         <p
           className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Example of&nbsp;
-          <code className="font-mono font-bold">fullyStaticPage.tsx</code>
+          <code className="font-mono font-bold">getStaticPaths/[name.tsx]</code>
         </p>
         <div
           className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
@@ -54,12 +59,12 @@ export default function Page() {
         <div
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Fully static content
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Nothing is fetched here, just a fully static, hardcoded page.
-          </p>
+          {children}
+
+          <div>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+          </div>
         </div>
 
       </div>
@@ -78,7 +83,6 @@ export default function Page() {
             Old router index page
           </p>
         </Link>
-
 
       </div>
     </main>

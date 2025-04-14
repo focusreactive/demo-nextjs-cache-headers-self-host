@@ -5,7 +5,6 @@ import '@/app/globals.css'
 
 const inter = Inter({subsets: ['latin']})
 
-
 export default function Page() {
 
   return (

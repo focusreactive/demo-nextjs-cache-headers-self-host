@@ -6,7 +6,7 @@ import type {
 import {Inter} from 'next/font/google'
 import Image from 'next/image'
 import Link from "next/link";
-import '../../app/globals.css'
+import '@/app/globals.css'
 
 const inter = Inter({subsets: ['latin']})
 

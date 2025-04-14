@@ -1,7 +1,7 @@
 import {Inter} from 'next/font/google'
 import Image from 'next/image'
 import Link from "next/link"
-import '../app/globals.css'
+import '@/app/globals.css'
 
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 
